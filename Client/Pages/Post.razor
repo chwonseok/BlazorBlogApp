@@ -1,0 +1,21 @@
+﻿@page "/posts/{url}"
+@inject BlazorBlogApp.Client.Services.IBlogService BlogService
+
+<h3>@CurrentPost.Title</h3>
+
+<div>
+    @CurrentPost.Content
+</div>
+
+@code {
+    private BlazorBlogApp.Shared.BlogPost CurrentPost;
+
+    [Parameter] // 이것을 쓰면 아래에 있는 것은 parameter가 됨
+    public string Url { get; set; }
+
+    // page가 초기화됐을 때 post를 가져오고 싶음
+    protected override void OnInitialized()
+    {
+        CurrentPost = BlogService.GetBlogPostByUrl(Url); // 여기선 case insensitive
+    }
+}

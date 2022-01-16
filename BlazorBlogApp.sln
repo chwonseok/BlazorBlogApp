@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBlogApp.Server", "Server\BlazorBlogApp.Server.csproj", "{9CC7BE16-F514-4D70-A2C4-2C442FDABFF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBlogApp.Server", "Server\BlazorBlogApp.Server.csproj", "{9CC7BE16-F514-4D70-A2C4-2C442FDABFF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBlogApp.Client", "Client\BlazorBlogApp.Client.csproj", "{E11F7723-2B7E-41F0-ACD2-7BA8C3534177}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBlogApp.Client", "Client\BlazorBlogApp.Client.csproj", "{E11F7723-2B7E-41F0-ACD2-7BA8C3534177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBlogApp.Shared", "Shared\BlazorBlogApp.Shared.csproj", "{8F2D0066-407B-44C6-9019-94B5D53E473A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBlogApp.Shared", "Shared\BlazorBlogApp.Shared.csproj", "{8F2D0066-407B-44C6-9019-94B5D53E473A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
