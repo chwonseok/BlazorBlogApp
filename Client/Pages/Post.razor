@@ -1,11 +1,20 @@
 ﻿@page "/posts/{url}"
 @inject BlazorBlogApp.Client.Services.IBlogService BlogService
 
-<h3>@CurrentPost.Title</h3>
+@if (CurrentPost == null)
+{
+    <span>Getting Blog Posts from the server..</span>
+}
+else
+{
+    <h3>@CurrentPost.Title</h3>
 
-<div>
-    @CurrentPost.Content
-</div>
+    <div>
+        <h6>
+            @CurrentPost.Content
+        </h6>
+    </div>
+}
 
 @code {
     private BlazorBlogApp.Shared.BlogPost CurrentPost;
@@ -14,8 +23,8 @@
     public string Url { get; set; }
 
     // page가 초기화됐을 때 post를 가져오고 싶음
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        CurrentPost = BlogService.GetBlogPostByUrl(Url); // 여기선 case insensitive
+        CurrentPost = await BlogService.GetBlogPostByUrl(Url); // 여기선 case insensitive
     }
 }
