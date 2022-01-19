@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorBlogApp.Server.Controllers
 {
-    [Route("api/[controller]")] // 이를 알아야 어떤 url로 이 컨트롤러에 액세스할 수 있는지 알 수 있음
+    [Route("api/[controller]")] // 여길 통해 어떤 url로 이 컨트롤러에 액세스할 수 있는지 알 수 있음
     [ApiController]
     public class BlogController : ControllerBase
     {
@@ -19,9 +19,8 @@ namespace BlazorBlogApp.Server.Controllers
         [HttpGet]
         public ActionResult<List<BlogPost>> GetAllBlogPosts()
         {
-            return Ok(Posts); // response로 Posts를 리턴함 (status code 200)
+            return Ok(Posts); // response로 Posts를 리턴함 (status code 200 경우)
         }
-
 
         [HttpGet]
         [Route("{url}")] // == [HttpGet("{url}")]
