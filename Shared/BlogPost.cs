@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BlazorBlogApp.Shared.Models.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorBlogApp.Shared
 {
-    public class BlogPost
+    public class BlogPost : CosmosModelBase
     {
-        public int Id { get; set; }
-        public string Url { get; set; }
+        // public int Id { get; set; }
+        [Required, StringLength(10, ErrorMessage = "Plese use only 10 characters")]
+        public string? Url { get; set; } = string.Empty;
 
-        public string Title { get; set; }
+        [Required]
+        public string? Title { get; set; } = string.Empty;
 
-        public string Content { get; set; }
+        public string? Content { get; set; } = string.Empty;
 
-        public string Description { get; set; }
-        
-        public string Author { get; set; }
+        public string? Description { get; set; } = string.Empty;
 
-        public DateTime DatePosted { get; set; } = DateTime.Now;
+        public string? Author { get; set; } = string.Empty;
 
+        public DateTime DateCreated { get; set; } = DateTime.Now;
         public bool IsPublised { get; set; } = true;
 
-        public bool IsDeleted { get; set; } = false;
+        public override string ClassType => "BlogPost";
     }
 }
