@@ -46,7 +46,7 @@
 
         // 서버에 있는 컨트롤러와 통신
         var httpResponse = await Http.PostAsJsonAsync<BlogPost>($"api/BlogPost/CreateNewBlogPost", newBlogPost);
-
+        Console.WriteLine(httpResponse);
         if (httpResponse.IsSuccessStatusCode)
         {
             Console.WriteLine("Success");
